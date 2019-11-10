@@ -1,0 +1,29 @@
+﻿@page
+@model RazorPagesGrades.Pages.GradeBook.IndexModel
+@{
+    ViewData["Title"] = "Gradebook generator";
+}
+
+<h1>Certificate Table</h1>
+
+<div class="jumbotron">
+    <table class="table table-striped table-responsive">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(m => m.CertificateData.FirstOrDefault().Acronym)</th>
+                <th>@Html.DisplayNameFor(m => m.CertificateData.FirstOrDefault().Subject)</th>
+                <th>@Html.DisplayNameFor(m => m.CertificateData.FirstOrDefault().ValWithMinus)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.CertificateData)
+            {
+                <tr>
+                    <td>@item.Acronym</td>
+                    <td>@item.Subject</td>
+                    <td>@item.ValWithMinus</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
